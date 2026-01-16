@@ -1,6 +1,7 @@
 from inv import Inv
-from food import Food
-from drink import Drink
+from food import Food, FBurger
+from drink import Drink, DWater
+from malwart import Malwart
 import random
 
 class Person:
@@ -35,8 +36,6 @@ class Person:
             item = self.inv.findDrink(100 - self.thirst)
             if item:
               self.cons(item)
-        elif self.money > 1000:
-          pass
       elif self.isTired():
         self.sleep()
       elif self.isBored():
@@ -91,4 +90,5 @@ class Person:
   def __str__(self):
     return f"-- Person --\nName: \"{self.name}\"\nFood: {self.hunger}\nWater: {self.thirst}"
 
+malwart: Malwart = Malwart()
 person: Person = Person("Hello World")
